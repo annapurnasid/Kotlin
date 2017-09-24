@@ -1,29 +1,13 @@
+import com.envato.Geometry
+
 /*
-* Class and functions
+* Class and functions with constructor in other file
 * */
 fun main(args : Array<String>) {
-    var element :String
-    element = "square"
-    println(element)
+    var element :String // Mutable
+    element = "circle"
 
-    // Function call
-    display(element)
-
-    // Call function of a class
-    var objGeometry = Geometry()
-    objGeometry.display(element)
-    // Using field variable
-    objGeometry.figure1 = element
-    println("Element is = " + objGeometry.figure1)
-}
-
-class Geometry {
-    var figure1 : String = ""
-    fun display(figure : String) {
-        println("Element is -> " + figure)
-    }
-}
-
-fun display(figure : String) {
-    println("Element is " + figure)
+    // Calling functions of different file:
+    var objGeometry = Geometry(element)
+    objGeometry.display()
 }
