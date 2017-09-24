@@ -1,25 +1,31 @@
 /*
-* Nullability in Kotlin
-*
-* Explicit call to throw NullPointerException
-* External Java Code
-* Inconsistency in initialization
-* use of !! Operator
+* String Templates - INTERPOLATION
 * */
+
 fun main(args : Array<String>) {
-    var element : String = "triangle"
-    println(element + " length = " + element.length)
-    var figure : String? = "circle"
-    figure = null
+    var element : String
+    element = "square"
+    var side = 4
+    println("Length of the string is ${element.length}")
 
-    // Safe Call Operator -> ?
-    println(figure?.length)
+    var objGeometry = Geometry(element)
+    objGeometry.display()
 
-    // Elvis Operator -> ?:
-    var len = figure?.length ?: -1
-    println("Len = " + len)
-
-    // Get NPE using !!
-//    println(figure!!.length)
-
+    var objSquare = Square(side)
+    println("Area of $element = ${objSquare.area()}")
 }
+
+class Geometry(var figure : String){
+    fun display() {
+        println("Element is " + figure)
+        println("Element is $figure")
+    }
+}
+
+class Square(var side : Int) {
+    fun area () : Int{
+        var area = side * side
+        return area
+    }
+}
+
