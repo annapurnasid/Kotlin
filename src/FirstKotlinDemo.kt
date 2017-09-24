@@ -1,26 +1,28 @@
 /*
-* Ranges and Dot operators
+* IF as expression
+*
+* WHEN as expression
 * */
 fun main(args : Array<String>) {
 
-    // 1, 2, 3, 4, 5
-    var range1 = 1..5
+    var num1 = 4
+    var num2 = 5
+    var big = if(num1 > num2) {
+                   println("check1")
+                   num1
+               } else {
+                   println("check2")
+                   num2
+               }
 
-    // 1, 2, 3, 4, 5
-    var range2 = 1.rangeTo(5)
+    println("Bigger of $num1 and $num2 -> $big")
 
-    // 5, 4, 3, 2, 1
-    var range3 = 5 downTo 1
-
-    // 5, 4, 3, 2, 1
-    var range4 = 5.downTo(1)
-
-    // 1, 3, 5
-    var range5 = 1..5 step 2
-
-    // 5, 3, 1
-    var range6 = 5 downTo 1 step 2
-
-    // 'a', 'b', 'c', 'd', 'e'.....'z'
-    var range7 = 'a'..'z'
+    var side = 1
+    var output = when(side) {
+        1 -> "Straight Line"
+        3, 6, 7 -> "Triangle/Hexagon/Septagon"
+        4 -> "Square"
+        else -> "$side not recorded"
+    }
+    println(output)
 }
