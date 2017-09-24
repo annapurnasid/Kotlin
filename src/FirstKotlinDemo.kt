@@ -1,13 +1,36 @@
-import com.envato.Geometry
-
 /*
-* Class and functions with constructor in other file
+* OOPs - Inheritance
 * */
 fun main(args : Array<String>) {
-    var element :String // Mutable
-    element = "circle"
+    var objDog = Dog()
+    objDog.eat()
+    objDog.bark()
+    objDog.breed = "German Shepherd"
+    objDog.color = "Brown"
 
-    // Calling functions of different file:
-    var objGeometry = Geometry(element)
-    objGeometry.display()
+    var objCat = Cat()
+    objCat.eat()
+    objCat.meow()
+    objCat.age = 2
+    objCat.color = "white"
+}
+
+open class Animal { // parent/base class
+    var color : String = ""
+    fun eat() {
+        println("Eats")
+    }
+}
+
+class Dog : Animal() { // child/derived class
+    var breed : String = ""
+    fun bark() {
+        println("Barks")
+    }
+}
+class Cat : Animal(){ // child/derived class
+    var age : Int = 1
+    fun meow() {
+        println("Meows")
+    }
 }
