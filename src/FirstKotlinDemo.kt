@@ -1,31 +1,26 @@
 /*
-* String Templates - INTERPOLATION
+* Ranges and Dot operators
 * */
-
 fun main(args : Array<String>) {
-    var element : String
-    element = "square"
-    var side = 4
-    println("Length of the string is ${element.length}")
 
-    var objGeometry = Geometry(element)
-    objGeometry.display()
+    // 1, 2, 3, 4, 5
+    var range1 = 1..5
 
-    var objSquare = Square(side)
-    println("Area of $element = ${objSquare.area()}")
+    // 1, 2, 3, 4, 5
+    var range2 = 1.rangeTo(5)
+
+    // 5, 4, 3, 2, 1
+    var range3 = 5 downTo 1
+
+    // 5, 4, 3, 2, 1
+    var range4 = 5.downTo(1)
+
+    // 1, 3, 5
+    var range5 = 1..5 step 2
+
+    // 5, 3, 1
+    var range6 = 5 downTo 1 step 2
+
+    // 'a', 'b', 'c', 'd', 'e'.....'z'
+    var range7 = 'a'..'z'
 }
-
-class Geometry(var figure : String){
-    fun display() {
-        println("Element is " + figure)
-        println("Element is $figure")
-    }
-}
-
-class Square(var side : Int) {
-    fun area () : Int{
-        var area = side * side
-        return area
-    }
-}
-
