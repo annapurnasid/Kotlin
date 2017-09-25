@@ -1,42 +1,24 @@
 /*
-* Lambdas and High Level Functions
+* Calling Java function from Kotlin file
 *
-* Lambdas - Functions without name
-* High Level Functions
-* - accepts function as arguments
-* - Returns function
-* - Both of them
-*
-* - Important for Android Application Development
+* Calling Kotlin function from Java File
 * */
 fun main(args : Array<String>) {
-
-    var objDemo = Demo()
-    objDemo.getGreater(2, 4)
-
-    var testLambda : (Int) -> (Unit) = {num : Int -> println("Greater no is: $num") }
-
-    objDemo.getGreater(2, 4, testLambda)
-
-    objDemo.getGreater(4, 0, {num : Int -> println("Greater no is: $num") })
-
+    var product : Int = JavaDemo.product(3, 9)
+    println("Java output is : $product")
 }
 
-class Demo {
-    fun getGreater (num1 : Int, num2 : Int) : Unit {
-        var big = if (num1 > num2)
-            num1
-        else
-            num2
-        println("Greater is: $big")
-    }
+fun sum(num1 : Int, num2 : Int) : Int {
+    return num1 + num2
+}
 
-    // High level function with Lambda as parameter
-    fun getGreater(num1 : Int, num2 : Int, myLambda : (Int) -> (Unit)) {
-        var big = if (num1 > num2)
-            num1
-        else
-            num2
-        myLambda(big) // println("Greater no is: $big")
+/*
+public class FirstKotlinDemoKt {
+    public static void main(String[] args){
+
+    }
+    public static int sum(int num1, int num2) {
+        return num1 * num2;
     }
 }
+*/
